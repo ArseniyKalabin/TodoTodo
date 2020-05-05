@@ -1,0 +1,37 @@
+.ErrorPanel {
+    background-color: #E55934;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.ErrorPanel.Close {
+    max-height: 0px;
+    padding: 0px;
+    transition: padding 0.5s, max-height 0.5s;
+    overflow: hidden;
+}
+
+.ErrorPanel.Opened {
+    max-height: 50px;
+    padding: 5px;
+    transition: padding 0.5s, max-height 0.5s;
+    overflow: hidden;
+}
+
+.ErrorPanel div {
+    text-align: center;
+}
+
+.ErrorPanel button {
+    border: 1px solid #FDE74C;
+    border-radius: 11px;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    font-size: 16px;
+    color: #fff;
+    margin-top: -11px;
+}

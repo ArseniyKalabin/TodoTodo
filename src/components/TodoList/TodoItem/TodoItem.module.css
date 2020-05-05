@@ -1,0 +1,26 @@
+.TodoItem {
+    border: 1px solid #9BC53D;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 30%;
+}
+
+.TodoItem .Title {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #FDE74C;
+    text-align: center;
+    font-weight: bold;
+}
+
+.TodoItem .Description {
+    padding: 20px 0;
+    border-bottom: 1px solid #bd3e3e;
+}
+
+.TodoItem .CreatedBy {
+    padding-top: 20px;
+    font-size: 12px;
+    text-align: right;
+    font-style: italic;
+}

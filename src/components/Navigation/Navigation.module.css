@@ -1,0 +1,28 @@
+.Navigation {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-flow: row;
+    align-items: center;
+    height: 100%;
+}
+
+.Navigation li {
+    height: 100%;
+}
+
+.Navigation li a {
+    height: 100%;
+    border-bottom: 4px solid transparent;
+    color: #000;
+    text-decoration: none;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.Navigation li a:hover, .Navigation li a:active, .Navigation li a.active {
+    border-bottom: 4px solid #9bc53d;
+}
