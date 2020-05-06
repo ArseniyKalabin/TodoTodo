@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import Aux from '../../hoc/Auxiliary/Auxiliary';
+import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import classes from './SignIn.module.css';
 
 const singIn = (props) => {

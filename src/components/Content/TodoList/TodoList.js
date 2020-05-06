@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TodoItem from './TodoItem/TodoItem';
-import Aux from '../../hoc/Auxiliary/Auxiliary';
+import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import classes from './TodoList.module.css';
 
 class TodoList extends Component {

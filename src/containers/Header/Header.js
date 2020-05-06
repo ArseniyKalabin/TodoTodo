@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from '../../store/actions/authentication';
 import logo from '../../assets/img/icon.png';
-import Navigation from '../../components/Navigation/Navigation';
-import UserInfo from '../../components/UserInfo/UserInfo';
+import Navigation from '../../components/Layout/Navigation/Navigation';
+import UserInfo from '../../components/Layout/UserInfo/UserInfo';
 import classes from './Header.module.css';
 import Aux from '../../hoc/Auxiliary/Auxiliary';
 

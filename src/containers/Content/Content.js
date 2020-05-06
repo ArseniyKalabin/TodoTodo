@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { Switch, Route } from "react-router-dom";
 import PrivateRoute from '../../hoc/PrivateRoute/PrivateRoute';
 import * as actions from '../../store/actions/index';
-import SignIn from '../../components/SignIn/SignIn';
-import HomePage from '../../components/HomePage/HomePage';
-import TodoList from '../../components/TodoList/TodoList';
+import SignIn from '../../components/Content/SignIn/SignIn';
+import HomePage from '../../components/Content/HomePage/HomePage';
+import TodoList from '../../components/Content/TodoList/TodoList';
 
 
 class Content extends Component {

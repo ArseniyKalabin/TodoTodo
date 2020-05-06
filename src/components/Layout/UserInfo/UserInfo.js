@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classes from './UserInfo.module.css';
-import userIcon from '../../assets/img/user.png';
+import userIcon from '../../../assets/img/user.png';
 
 class userInfo extends Component {
     state = {

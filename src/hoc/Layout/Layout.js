@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../containers/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import Footer from '../../components/Layout/Footer/Footer';
 import LoadingOverlay from '../../components/UI/LoadingOverlay/LoadingOverlay';
 import withErrorHandler from '../withErrorHandler/withErrorHandler';
 import axios from '../../axios-auth';
