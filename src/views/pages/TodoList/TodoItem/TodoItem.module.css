@@ -1,0 +1,95 @@
+.TodoItem {
+    border: 2px solid #9BC53D;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.TodoItem .Title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #FDE74C;
+}
+
+.TodoItem .Title input {
+    font-weight: bold;
+}
+
+.TodoItem .Description {
+    padding: 10px 0;
+    border-bottom: 1px solid #bd3e3e;
+}
+
+.TodoItem .CreatedBy {
+    padding-top: 10px;
+    font-size: 12px;
+    text-align: right;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.TodoItem .ControlContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.TodoItem input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.TodoItem input:disabled {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.TodoItem .ValidationError {
+    text-align: right;
+    color: #FF0000;
+    font-size: 12px;
+    padding: 2px 2px 0;
+}
+
+.TodoItem button {
+    width: 30%;
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px 0px #61544c;
+    margin-bottom: 2px;
+}
+
+.TodoItem button:active {
+    margin: 2px 0 0 2px;
+    box-shadow: none;
+}
+
+.TodoItem button:disabled {
+    background-color: #aaa;
+    cursor: auto;
+}
+
+.Orange {
+    background-color: #FA7921;
+    ;
+}
+
+.Red {
+    background-color: #E55934;
+    ;
+}
+
+.Green {
+    background-color: #9BC53D;
+    ;
+}
