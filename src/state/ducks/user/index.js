@@ -1,4 +1,4 @@
-import reducer from './reducers';
+import reducer from './userSlice';
 import * as userOperations from './operations';
 import * as userSelectors from './selectors';
 

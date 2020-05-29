@@ -4,13 +4,13 @@ const initialState = {
 }
 
 const showLoadingReducer = (state = initialState, action) => {
-    if (action.type.includes("_REQUEST")) {
+    if (action.type.includes("pending")) {
         return {
             ...state,
             loading: true
         }
     }
-    if (action.type.includes("_SUCCESS") || action.type.includes("_FAILURE")) {
+    if (action.type.includes("fulfilled") || action.type.includes("rejected")) {
         return {
             ...state,
             loading: false

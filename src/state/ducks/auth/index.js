@@ -1,4 +1,4 @@
-import reducer from './reducers';
+import reducer from './authSlice';
 import * as authOperations from './operations';
 import * as authSelectors from './selectors';
 

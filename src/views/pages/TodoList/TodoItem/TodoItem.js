@@ -98,7 +98,7 @@ class TodoItem extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
     deleteHandler: (id) => dispatch(todosOperations.deleteTodo(id)),
-    updateHandler: (id, data) => dispatch(todosOperations.updateTodo(id, data))
+    updateHandler: (id, data) => dispatch(todosOperations.updateTodo({ updatedId: id, updatedData: data }))
 })
 
 export default connect(null, mapDispatchToProps)(TodoItem);

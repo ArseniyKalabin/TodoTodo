@@ -1,4 +1,4 @@
-import reducer from './reducers';
+import reducer from './todosSlice';
 import * as todosOperations from './operations';
 import * as todosSelectors from './selectors';
 
