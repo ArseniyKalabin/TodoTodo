@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import { unwrapResult } from '@reduxjs/toolkit';
 import { todosOperations } from '../../../../state/ducks/todos';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import classes from './AddTodo.module.css';
@@ -18,7 +19,10 @@ const addTodo = (props) => (
             return errors;
         }}
         onSubmit={(values, { resetForm }) => {
-            props.addTodo(values, resetForm);
+            props.addTodo(values)
+                .then(unwrapResult)
+                .then(() => { resetForm() })
+                .catch(() => { })
         }}
     >
         {({ isValid, dirty }) => (
@@ -39,7 +43,7 @@ const addTodo = (props) => (
 
 
 const mapDispatchToProps = dispatch => ({
-    addTodo: (todo, resetForm) => dispatch(todosOperations.addTodo(todo, resetForm))
+    addTodo: (todo) => dispatch(todosOperations.addTodo(todo))
 })
 
 export default connect(null, mapDispatchToProps)(addTodo);

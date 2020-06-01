@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
-import { authOperations, authSelectors } from '../../../state/ducks/auth';
+import PropTypes from 'prop-types';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { authOperations, authSelectors } from '../../../state/ducks/auth';
 import classes from './SignIn.module.css';
 
-const SingIn = (props) => {
+const SignIn = (props) => {
 
     useEffect(() => {
         if (!props.isAuthenticated) {
@@ -61,6 +62,10 @@ const SingIn = (props) => {
 
 };
 
+SignIn.propTypes = {
+    isAuthenticated: PropTypes.bool.isRequired
+}
+
 const mapStateToProps = state => ({
     isAuthenticated: authSelectors.getAuthStatus(state)
 });
@@ -70,4 +75,4 @@ const mapDispatchToProps = dispatch => ({
     autoSignIn: () => dispatch(authOperations.autoSignIn())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(SingIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

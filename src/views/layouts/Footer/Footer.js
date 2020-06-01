@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import classes from './Footer.module.css';
 
 const Footer = (props) => {
@@ -15,5 +16,9 @@ const Footer = (props) => {
         </footer>
     )
 };
+
+Footer.propTypes = {
+    counter: PropTypes.number
+}
 
 export default Footer;

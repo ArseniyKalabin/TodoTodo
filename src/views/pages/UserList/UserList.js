@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { userOperations, userSelectors } from '../../../state/ducks/user';
 import classes from './UserList.module.css';
 
@@ -26,6 +27,10 @@ const UserList = (props) => {
         </>
     );
 };
+
+UserList.propTypes = {
+    userList: PropTypes.arrayOf(PropTypes.object)
+}
 
 const mapStateToProps = state => ({
     userList: userSelectors.getUserList(state)

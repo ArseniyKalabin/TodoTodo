@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { authOperations, authSelectors } from '../../../../state/ducks/auth';
 import classes from './UserInfo.module.css';
 import userIcon from '../../../../assets/img/user.png';
@@ -37,6 +38,14 @@ const UserInfo = (props) => {
         </div>
     );
 }
+
+UserInfo.propsTypes = {
+    user: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        role: PropTypes.string.isRequired
+    }),
+    opened: PropTypes.bool
+};
 
 const mapStateToProps = state => ({
     user: authSelectors.getUserData(state)

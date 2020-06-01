@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { authSelectors } from '../../state/ducks/auth';
 import { permissionList } from '../../utils/constants';
 import { checkPermissionRank } from '../../utils/permissionUtils';
@@ -23,6 +24,11 @@ const privateSection = (props) => {
         </>
     );
 
+}
+
+privateSection.propTypes = {
+    isAuthenticated: PropTypes.bool.isRequired,
+    userRole: PropTypes.string
 }
 
 const mapStateToProps = state => ({

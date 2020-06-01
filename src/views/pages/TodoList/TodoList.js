@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import AddTodo from './AddTodo/AddTodo';
 import TodoItem from './TodoItem/TodoItem';
 import { todosOperations, todosSelectors } from '../../../state/ducks/todos';
@@ -26,6 +27,10 @@ const TodoList = (props) => {
         </>
     );
 };
+
+TodoList.propTypes = {
+    todoList: PropTypes.arrayOf(PropTypes.object)
+}
 
 const mapStateToProps = state => ({
     todoList: todosSelectors.getTodosList(state)

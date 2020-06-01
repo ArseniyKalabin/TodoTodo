@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import classes from './TodoItem.module.css';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { todosOperations } from '../../../../state/ducks/todos';
 import PrivateSection from '../../../enhancers/PrivateSection';
+import classes from './TodoItem.module.css';
 
 const TodoItem = (props) => {
 
@@ -88,6 +89,10 @@ const TodoItem = (props) => {
         </Formik>
     );
 };
+
+TodoItem.propTypes = {
+    isEditing: PropTypes.bool
+}
 
 const mapDispatchToProps = (dispatch) => ({
     deleteHandler: (id) => dispatch(todosOperations.deleteTodo(id)),
