@@ -21,7 +21,6 @@ export const addTodo = createAsyncThunk(
 export const deleteTodo = createAsyncThunk(
     'todos/deleteTodoStatus',
     async (id) => {
-        console.log(id);
         const response = await axios.delete(`/todos/${id}`);
         return { id: id };
     }
@@ -30,7 +29,6 @@ export const deleteTodo = createAsyncThunk(
 export const updateTodo = createAsyncThunk(
     'todos/updateTodoStatus',
     async (updatedTodo) => {
-        console.log(updatedTodo);
         const { updatedId, updatedData } = updatedTodo;
         const response = await axios.put(`/todos/${updatedId}`, updatedData);
         return updatedTodo;

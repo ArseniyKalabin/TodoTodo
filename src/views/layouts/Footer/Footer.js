@@ -1,24 +1,19 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import classes from './Footer.module.css';
 
-class Footer extends Component {
-    state = {
-        counter: 0
+const Footer = (props) => {
+
+    const [counter, setCounter] = useState(0);
+
+    if (counter === 3) {
+        throw new Error('I crashed!');
     }
 
-    throwErrorHandler = () => {
-        this.setState(state => ({ counter: state.counter + 1 }));
-    }
-    render() {
-        if (this.state.counter === 3) {
-            throw new Error('I crashed!');
-        }
-        return (
-            <footer className={classes.Footer} onClick={this.throwErrorHandler}>
-                <div>2020</div>
-            </footer>
-        )
-    }
+    return (
+        <footer className={classes.Footer} onClick={() => setCounter(counter => counter + 1)}>
+            <div>2020</div>
+        </footer>
+    )
 };
 
 export default Footer;

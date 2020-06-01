@@ -1,32 +1,30 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { userOperations, userSelectors } from '../../../state/ducks/user';
 import classes from './UserList.module.css';
 
 
-class UserList extends Component {
+const UserList = (props) => {
 
-    componentDidMount() {
-        if (!this.props.userList.length) {
-            this.props.fetchUserList();
+    useEffect(() => {
+        if (!props.userList.length) {
+            props.fetchUserList();
         }
-    }
+    }, []);
 
-    render() {
-        return (
-            <>
-                <h1>User List</h1>
-                <ul className={classes.UserList}>
-                    {this.props.userList.map(user => (
-                        <li key={user.name}>
-                            <div>Name: {user.name}</div>
-                            <div>Role: {user.role}</div>
-                        </li>
-                    ))}
-                </ul>
-            </>
-        );
-    }
+    return (
+        <>
+            <h1>User List</h1>
+            <ul className={classes.UserList}>
+                {props.userList.map(user => (
+                    <li key={user.name}>
+                        <div>Name: {user.name}</div>
+                        <div>Role: {user.role}</div>
+                    </li>
+                ))}
+            </ul>
+        </>
+    );
 };
 
 const mapStateToProps = state => ({

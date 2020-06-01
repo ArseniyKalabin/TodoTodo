@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 import { authOperations, authSelectors } from '../../../state/ducks/auth';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import classes from './SignIn.module.css';
 
-class SingIn extends Component {
-    componentDidMount() {
-        if (!this.props.isAuthenticated) {
-            this.props.autoSignIn();
+const SingIn = (props) => {
+
+    useEffect(() => {
+        if (!props.isAuthenticated) {
+            props.autoSignIn();
         }
+    }, []);
 
-    }
-
-    loggedRedirect = (isAuthenticated) => {
+    const loggedRedirect = (isAuthenticated) => {
         if (isAuthenticated) {
             return <Redirect to="/" />;
         }
     }
 
-    loginFormRender = (handler) => (
+    const loginFormRender = (handler) => (
         <Formik
             initialValues={{ login: '', password: '' }}
             validate={values => {
@@ -51,15 +51,13 @@ class SingIn extends Component {
             )}
         </Formik>
     );
-    render() {
-        return (
-            <>
-                {this.loggedRedirect(this.props.isAuthenticated)}
-                <h1>Please sign in to continue!</h1>
-                {this.loginFormRender(this.props.signInHandler)}
-            </>
-        );
-    }
+    return (
+        <>
+            {loggedRedirect(props.isAuthenticated)}
+            <h1>Please sign in to continue!</h1>
+            {loginFormRender(props.signInHandler)}
+        </>
+    );
 
 };
 
