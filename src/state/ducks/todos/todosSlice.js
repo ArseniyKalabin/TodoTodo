@@ -1,14 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchTodos, addTodo, deleteTodo, updateTodo } from './operations';
 
+
 const initialState = {
-    todosList: []
+    todosList: [],
+    filter: null
 }
 
 const todosSlice = createSlice({
     name: 'todos',
     initialState: initialState,
-    reducers: {},
+    reducers: {
+        setFilter: (state, action) => {
+            const filter = action.payload;
+            state.filter = filter;
+        }
+    },
     extraReducers: {
         [fetchTodos.fulfilled]: (state, action) => {
             const todos = action.payload;
@@ -33,4 +40,8 @@ const todosSlice = createSlice({
     }
 });
 
-export default todosSlice.reducer;
+const { actions, reducer } = todosSlice;
+
+export const { setFilter } = actions;
+
+export default reducer;
